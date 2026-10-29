@@ -1,22 +1,59 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        
-        <script src="" async defer></script>
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+
+    <title>Jay's Manuscript</title>
+</head>
+<body>
+    <div class="pg">
+        <nav class="topnav">
+            <a class="logo" href="index.html">[name]</a>
+            <span>
+                <a class="active" href="index.html">home</a>
+                <a href="about.html">about</a>
+                <a href="portfolio.html">portfolio</a>
+                <a href="contact.html">contact</a>
+            </span>
+        </nav>
+        <div class="bar"></div>
+
+        <div class="wall">
+            <div class="floor"></div>
+            <div class = "arch side"></div>
+            <div class="arch center">
+                <span class="info">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="64" height="64" viewBox="0 0 64 64">
+                            <circle cx="32" cy="32" r="12"></circle>
+                            <circle cx="32" cy="32" r="24"></circle>
+                            <path d="M32 0V64 M0 32H64 M9 9L55 55 M9 55L55 9"></path>
+                    </svg>
+                    <h1>Jay Weil</h1>
+                    <p class="blurb">Technical artist, game programmer &amp; 
+                        academic focused on sexuality &amp; necropolitics in gaming.</p>
+                    <a href="portfolio.html" class="button">View the Archives</a>
+                </span>
+            </div>
+            <div class="arch side"></div>
+        </div>
+
+        <div class="footer">
+            bas-de-page
+            <div class="f1">
+                <span id="f"> </span>
+                    <a id="post">
+                    <span> See Post </span>
+                    <span><i class="arrow right"></i></span>
+                    </a>
+            </div> 
+        </div>
+    </div>
+</body>
 </html>

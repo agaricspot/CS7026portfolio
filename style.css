@@ -1,0 +1,457 @@
+html, body {
+  font-family: "IM Fell English", "Georgia", serif;
+  background-color: #f0e4c8;
+  margin:0;
+}
+
+/*surrounds page content with  a border*/
+.pg{
+   border: 10px double #b8892b;
+   padding: 28px;
+   min-height: 90vh;
+   display: flex;
+   flex-direction: column;
+}
+
+h2{
+    font-family: 'UnifrakturCook', 'UnifrakturMaguntia', 'Old English Text MT', serif;
+
+}
+
+/*navigation 
+space-between places logo and nav links apart*/
+.topnav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    padding-bottom: 14px;
+    font-size: .9em;
+    letter-spacing: .14em; /* more spacing*/
+    text-transform: uppercase;
+   
+}
+.topnav span{ 
+    display:flex;
+    flex-wrap:wrap; 
+    gap: 28px;
+}
+.topnav a {
+    color:#a82d1a; /*set color to vermillion*/
+    text-decoration: none;
+}
+.topnav a.active{ /*set active color to lapis & add vermillion underline*/
+    color: #1e3a78;
+    text-decoration: underline;
+    text-underline-offset: .25em;
+    text-decoration-color: #a81f0a;
+}
+.topnav a:hover{
+    color: #8e0e0e;
+}
+.topnav a.active:hover{
+    color:#182a70;
+}
+
+.bar{ /*repeating linear gradient pattern. housed in a div to use as a dividier*/
+    height: 12px;
+    background: repeating-linear-gradient(90deg, 
+         #1e3a78,
+         #1e3a78 24px,
+         #b8892b 24px,
+         #b8892b 28px,
+         #a82d1a 28px,
+         #a82d1a 52px,
+         #b8892b 52px, 
+         #b8892b 56px);
+}
+
+/*footer*/
+.footer {
+  margin-top: auto;
+  padding-top: 10px;
+  text-transform: uppercase;
+  font-size: .7em;
+  color: #a81f0a;
+  border-top: 8px double #b8892b;
+}
+.f1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    padding-top: 5px;
+    letter-spacing: .14em; /* more spacing*/
+}
+#f{
+    font-style: italic;
+    display: flex;
+    flex-wrap: wrap;
+    gap:28px;
+    font-size:.9em;
+    letter-spacing:.08em;
+    text-transform: none !important;
+}
+#post{
+    color: inherit;
+    text-decoration: none;
+}
+#post:hover{
+    color: #8e0e0e;
+}
+.arrow{
+    color:inherit;
+    border: solid currentColor; 
+    border-width: 0 3px 3px 0; 
+    display: inline-block; 
+    padding: 3px;
+}
+.right{
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+/*arch display*/
+.wall {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12%;
+    padding: 24px 0;
+    --h: max(320px, calc(100vh - 290px));
+    flex: 1;
+}
+.arch{
+    position: relative;
+    z-index: 1; /*sets in front of floor divs*/
+    background: #1e3a78; 
+    border: double 8px #b8892b;
+    border-radius: 999px 999px 0 0; /*round top*/
+    text-align: center;
+    box-sizing: border-box;
+}
+.center{
+    height: var(--h);
+    width: auto;             
+    aspect-ratio: .63;
+    flex: none;
+    color: #f3c569;
+    justify-content: center;
+    align-items: center;
+}
+.side{
+    height: calc(var(--h) * .72);
+    width: auto;
+    aspect-ratio: .42;
+    flex: none;
+    display:inline;
+}
+
+
+.floor{
+    background: #dccead;
+    position:absolute; 
+    left:0; right: 0; 
+    height:61px;
+    bottom:0px;
+}
+
+/*content*/
+.info{
+    position:absolute;
+    color:#f3c569;
+    bottom:0px;
+    left:0;
+    margin-bottom:  60px;
+}
+.center h1{
+    font-family: 'UnifrakturCook', 'UnifrakturMaguntia', 'Old English Text MT', serif;
+    font-size: 3em;
+    margin: 0;
+    margin-bottom: 30px;
+    color: #f3c569;
+}   
+.button{
+    border: solid 2px #f3c569;
+    color:#f3c569;
+    padding: 10px;
+    text-decoration: none !important;
+    text-transform: uppercase;
+    font-size: .8em;
+}
+.blurb{
+    text-align: justify;
+    padding:15px;
+    padding-top: 0;
+    margin-top: -20px;
+}
+
+.arch svg {
+    margin:0;
+    fill: none;
+    stroke-width: 3px;
+    stroke: #f3c569;
+    padding-bottom: 20px;
+}
+
+
+
+/*contact page*/
+.contact{
+    display: flex;
+    gap: 3%;
+    align-items: stretch;
+    justify-content: center;
+    min-height: 200px; 
+}
+.sidebar{
+    box-sizing: border-box;
+    flex: 1 1 0; 
+    min-width: 0;
+}
+.l{
+    text-align: right !important;
+    border-right: solid #2b1d12 1px;
+    padding-right: 20px;
+
+}
+.r{
+    text-align: left !important;
+    border-left: solid #2b1d12 1px;
+    padding-left:20px
+}
+
+h1{
+    font-family: 'UnifrakturCook', 'UnifrakturMaguntia', 'Old English Text MT', serif;
+    font-size: 3em;
+    color: #1e3a78;
+    text-align: center;
+}
+.contact p, .below p{
+    font-style: italic;
+    padding:0 auto; 
+    margin: 0 auto; 
+}
+
+aside{
+    white-space: normal;
+}
+.caps{
+    text-transform: uppercase !important;
+    color:#a81f0a; 
+    font-style:normal !important;
+}
+
+.below{
+    display: flex;
+    flex-direction: column;
+    gap: 3%;
+    text-align: center;
+    max-width: 35%;
+    
+}
+
+.below div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.contact a{
+    text-decoration: none;
+    color: #1e3a78;
+}
+.contact a:hover{
+    color: #182a70;
+}
+
+.letter{
+    flex: 3 1 480px;
+    max-width: 640px; 
+}
+.letter p{
+    font-style: normal;
+}
+.greeting{
+    font-family: 'UnifrakturCook', 'UnifrakturMaguntia', 'Old English Text MT', serif;
+    color:#a81f0a;
+    font-size: 2em;
+    margin: 0 0 18px; 
+}
+.intro{
+    margin: 0 0 12px; 
+    padding-bottom: 6px;
+    font-size: 1.2em;
+    border-bottom: 1px solid #d9c79c;
+}
+label{
+    display: block;
+    margin-top: 18px; 
+    font-size: .8em;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color:#a81f0a;
+}
+input, textarea{
+    display: block;
+    width: 100%; 
+    box-sizing: border-box;
+    font: inherit; 
+    font-size: 1em;
+    color: #2b1d12;
+    background: transparent; 
+    border: 0; 
+    border-bottom: 1px solid #2b1d12; 
+    padding: 6px; 
+}
+textarea{
+    border: 1px solid #2b1d12; 
+    padding: 10px; 
+    margin-top: 4px;
+    resize: vertical;
+}
+input:focus, textarea:focus{ outline: 2px solid #1e3a78;}
+
+.send{display: flex; align-items: center; gap: 18px; margin-top: 26px;}
+.seal{
+    width:96px;
+    height:96px;
+    border-radius: 999px;
+    border: 6px double #b8892b; 
+    background: #a81f0a;
+    font-family: 'UnifrakturCook', 'UnifrakturMaguntia', 'Old English Text MT', serif;
+    font-size: 1.5em;
+    color:#f3c569;
+    cursor: pointer;
+}
+.seal:hover{background: #8e0e0e;}
+.note{
+    font-style: italic;
+    font-size: .9em;
+    color:#2b1d12
+}
+
+/*about page*/
+.about{
+    display: grid;
+    grid-template-columns: minmax(100px, .75fr) 2fr;
+    grid-template-rows: auto 1fr;
+    gap:28px;
+    row-gap: 0;
+    align-items:end;
+    justify-content: center;
+    padding:28px 28px 28px 0;
+}
+.portrait{
+    position: relative; 
+    width: 100%;
+    aspect-ratio: .78;
+    margin: 10px;
+    padding-right: 28px;
+    grid-row:1/3;
+    flex-shrink: ;
+    /*Source - https://stackoverflow.com/a/60499251
+    Posted by Theraot
+    Retrieved 2026-10-29, License - CC BY-SA 4.0*/
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.textcontent{
+    border-left: 1px solid #2b1d12;
+    column-count: 2;
+    column-gap: 20px;
+    line-height: 1.5;
+    padding-left: 20px;
+    margin-top: 28px;
+}
+.textcontent p{
+    break-inside: avoid;
+    margin:0 0 1em;
+    
+}
+.initial{
+    --size: clamp(56px, 12vw, 114px);
+
+    float: left; 
+    width: var(--size);
+    max-width: var(--size);
+    flex:none;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 6px 6px 0 0;
+    background:#1e3a78;
+    border: 6px double #b8892b;
+    font-family: 'UnifrakturCook', 'UnifrakturMaguntia', 'Old English Text MT', serif;
+    font-size: calc(var(--size)*.6);
+    color: #f3c569;
+
+}
+.sr{ /*for screen readers, ignoring big initial, reads just regular hidden text*/
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+.cv{
+    display: flex;
+    justify-content: center;
+    gap:20px;
+    padding-left: 15px;
+    border-left: 1px solid #2b1d12;
+    align-self: flex-end;
+}
+.cv h2 { margin-top: 5px; margin-bottom: 0px; }
+.cv a{display: hidden;}
+
+.ed{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    padding:10px;
+    padding-top:0;
+    flex: 1 1 min-content;
+    border: 8px double#d9c79c;
+}
+.proj{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    padding:10px;
+    padding-top:0;
+    flex: 1 1 min-content;
+    border: 8px double#d9c79c;
+}
+
+
+/*media queries*/
+@media (max-width: 1100px){
+    aside{display: none;}
+    .below{display: flex;}
+}
+   
+@media (min-width: 1100px){
+    aside{display: normal;}
+    .below{display: none;}
+    /*.about{display: grid; flex-wrap: none;}
+    .textcontent{column-count: 2;}*/
+}
+@media (max-width: 700px){
+    .side{display: none;}
+    /* .textcontent{column-count: 1;}
+    .about{display: flex; flex-wrap: wrap;}*/
+}

@@ -47,6 +47,7 @@ space-between places logo and nav links apart*/
     text-underline-offset: .25em;
     text-decoration-color: #a81f0a;
 }
+/*darken for responsiveness*/
 .topnav a:hover{
     color: #8e0e0e;
 }
@@ -121,7 +122,7 @@ space-between places logo and nav links apart*/
     align-items: center;
     gap: 12%;
     padding: 24px 0;
-    --h: max(320px, calc(100vh - 290px));
+    --h: max(480px, calc(100vh - 290px));  
     flex: 1;
 }
 .arch{
@@ -139,7 +140,7 @@ space-between places logo and nav links apart*/
     aspect-ratio: .63;
     flex: none;
     color: #f3c569;
-    justify-content: center;
+    justify-content: sa;
     align-items: center;
 }
 .side{
@@ -426,8 +427,9 @@ input:focus, textarea:focus{ outline: 2px solid #1e3a78;}
     justify-content: flex-start;
 }
 
-/*media queries*/
+/*
 
+/*media queries*/
 @media (max-width: 1100px){ 
     /*contact*/
     aside{display: none;}/*display a different div with same information that works better on small screens*/

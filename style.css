@@ -427,7 +427,101 @@ input:focus, textarea:focus{ outline: 2px solid #1e3a78;}
     justify-content: flex-start;
 }
 
-/*
+/*portfolio*/
+.hero{
+    overflow: hidden;
+    padding-top: 28px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: end;
+}
+
+.main{
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+.hero .text h1{
+    margin:0; 
+    line-height: 1;
+}
+
+.role{
+    margin: 6px 0 0;
+    font-style: italic;
+}
+
+.links{
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    list-style: none;
+    padding: 2px; 
+}
+.links img{
+    width: 20px; 
+    height: 20px;
+}
+.links img:hover{ /*black so move on hover for responsiveness*/
+    transform: translateY(-2px)!important;
+}
+
+.heroarch{
+    position: relative;
+    flex: none;
+    grid-column: 2;
+}
+.heroside{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.sidel{ padding-right: 10em; }
+.sider{ padding-left: 10em; }
+
+.edgel, .edger{ width: 140px; height: 190px; margin-left: auto;}
+.innerl, .innerr{ width: 160px; height: 150px; }
+.edgel{ margin-left: -70px; }          /* half hidden by the header's edge */
+.edger{ margin-right: -70px; }
+
+.ledge{
+    grid-column: 1/-1;
+    position: relative; 
+    z-index: 3;
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #dccead;
+    border-top: 3px double #b8892b;
+}
+
+.toggle{
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    color:#a81f0a;
+}
+.toggle:hover { color: #8e0e0e; }
+
+.arrow.down{
+    padding: 5px;
+    margin-top: -4px;
+    transform: rotate(45deg);
+    transition: transform .3s ease;
+}
 
 /*media queries*/
 @media (max-width: 1100px){ 
@@ -452,6 +546,11 @@ input:focus, textarea:focus{ outline: 2px solid #1e3a78;}
    
 }
 @media (max-width: 700px){
-    .side{display: none;}/*remove side arches on landing page*/
+    .side{ display: none; }
+    .hero{ grid-template-columns: minmax(0, 1fr); }
+    .hero-center{ grid-column: 1; }
+}
 
+@media (max-width: 1000px) {
+  .innerl, .innerr { display: none; }
 }

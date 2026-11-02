@@ -25,6 +25,7 @@ space-between places logo and nav links apart*/
     justify-content: space-between;
     align-items: baseline;
     gap: 16px;
+    padding:0;
     padding-bottom: 14px;
     font-size: .9em;
     letter-spacing: .14em; /* more spacing*/
@@ -55,8 +56,11 @@ space-between places logo and nav links apart*/
 }
 .logo{
     font-family: 'UnifrakturCook', 'UnifrakturMaguntia', 'Old English Text MT', serif;
-    letter-spacing:-3px;
+    letter-spacing:-2px;
+    font-size: 1.5em;
     text-transform: none;
+    padding:0;
+    margin:0;
   
 }
 
@@ -223,6 +227,7 @@ space-between places logo and nav links apart*/
     align-items: stretch;
     justify-content: center;
     min-height: 200px; 
+    margin-bottom: 28px;
 }
 .sidebar{
     box-sizing: border-box;
@@ -356,7 +361,7 @@ input:focus, textarea:focus{ outline: 2px solid #1e3a78;}
 /*about page*/
 .about{
     display: grid;
-    grid-template-columns: 400px minmax(0, 1fr);  /* fixed | everything else */
+    grid-template-columns: 350px minmax(0, 1fr);  /* fixed | everything else */
     grid-template-rows: auto 1fr;
     column-gap: 28px;
     row-gap: 0;
@@ -414,7 +419,7 @@ input:focus, textarea:focus{ outline: 2px solid #1e3a78;}
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    margin: 6px 6px 0 0;
+    margin: 0px 6px 0 0;
     background:#1e3a78;
     border: 6px double #b8892b;
     font-family: 'UnifrakturCook', 'UnifrakturMaguntia', 'Old English Text MT', serif;
@@ -579,7 +584,6 @@ input:focus, textarea:focus{ outline: 2px solid #1e3a78;}
     padding: 28px 0 28px 0;
     margin: 5px 0 5px;
     border-top: 5px double #b8892b;
-    border-bottom: 5px double #b8892b
 
 }
 .work-meta{
@@ -620,7 +624,7 @@ input:focus, textarea:focus{ outline: 2px solid #1e3a78;}
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scrollbar-width: none; /*hide scrollbar*/
-    aspect-ratio: 1440/900; /*sizing*/
+    aspect-ratio: 1600/900; /*sizing*/
     padding:5px;
     border: 5px double #b8892b
 }

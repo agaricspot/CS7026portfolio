@@ -366,7 +366,8 @@ input:focus, textarea:focus{ outline: 2px solid #1e3a78;}
     grid-template-rows: auto 1fr;
     column-gap: 28px;
     row-gap: 0;
-    align-items: start;
+    align-items: center;
+    justify-content: center;
     padding: 28px 28px 28px 0;
 }
 .portrait{

@@ -17,6 +17,14 @@ h2{
     font-family: 'UnifrakturCook', 'UnifrakturMaguntia', 'Old English Text MT', serif;
 }
 
+h1{
+    font-family: 'UnifrakturCook', 'UnifrakturMaguntia', 'Old English Text MT', serif;
+    font-size: 3em;
+    color: #1e3a78;
+    text-align: center;
+}
+
+
 /*navigation 
 space-between places logo and nav links apart*/
 .topnav{
@@ -60,8 +68,7 @@ space-between places logo and nav links apart*/
     font-size: 1.5em;
     text-transform: none;
     padding:0;
-    margin:0;
-  
+    margin:0; 
 }
 
 .bar{ /*repeating linear gradient pattern. housed in a div to use as a dividier*/
@@ -246,12 +253,6 @@ space-between places logo and nav links apart*/
     padding-left:20px
 }
 
-h1{
-    font-family: 'UnifrakturCook', 'UnifrakturMaguntia', 'Old English Text MT', serif;
-    font-size: 3em;
-    color: #1e3a78;
-    text-align: center;
-}
 .contact p, .below p{
     font-style: italic;
     padding:0 auto; 

@@ -12,12 +12,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="script.js"></script>
 
-    <title>Jay's Manuscript</title>
+    <title>Portfolio</title>
 </head>
 <body>
     <div class="pg">
         <nav class="topnav">
-            <a class="logo" href="index.html">[name]</a>
+            <a class="logo" href="index.html">JW</a>
             <span>
                 <a href="index.html">home</a>
                 <a href="about.html">about</a>
@@ -31,6 +31,8 @@
             <div class="heroside sidel" aria-hidden="true">
                 <div class="arch heroarch edgel"></div>
                 <div class="arch heroarch innerl"></div>
+                <div class="arch heroarch innerl l2"></div>
+
             </div>
             
             <div class="hero-center">
@@ -50,23 +52,124 @@
             </div>
 
             <div class="heroside sider" aria-hidden="true">
+                <div class="arch heroarch innerr r2"></div>
                 <div class="arch heroarch innerr"></div>
                 <div class="arch heroarch edger"></div>
             </div>
            
-
             <div class="ledge">
-                <button class="toggle" aria-controls="project-list" aria-label="show projects">
+                <!--<button class="toggle" aria-controls="project-list" 
+                    aria-expanded="false" aria-label="show projects">
                     <i class="arrow down"></i>
-                </button>
+                </button>-->
             </div>
-
-
-
         </header>
+
+        <section id="projects" class="drawer open">
+            <div class="drawer inner">
+
+                <!--disillusion-->
+                <article class="work">
+                <div class="work-meta"> 
+                    <h3>Disillusion</h3>
+                    <p>WPI, CS/IMGD MQP</p>
+                    <p>Concept Artist, Technical Artist, Systems Programmer</p>
+                    <p>August 2025 - May 2026</p>
+                </div>
+
+                <div class="work-main">
+                    <div class="slides">
+                        <button type="button" class="arrow left s" aria-label="previous image" onclick="plus_slide(-1)"><i></i></button>
+                        <div class="slidetrack" tabindex="0" aria-label="[title] images">
+                            <figure class="fade"><iframe src="images/Disillusion - Disillusion_Trailer (844p).mp4" alt="[trailer for Disillusion as seen on steam]"></iframe></figure>
+                            <figure class="fade"><img src="images/dis_1.png" alt="[describe the image]"></figure>
+                            <figure class="fade"><img src="images/dis_2.png" alt="[describe the image]"></figure>
+                            <figure class="fade"><img src="images/dis_4.png" alt="[describe the image]"></figure>
+                            <figure class="fade"><img src="images/dis_42.png" alt="[describe the image]"></figure>
+                            <figure class="fade"><img src="images/dis_5.png" alt="[describe the image]"></figure>
+                        </div>
+                        <button type="button" class="arrow right s" aria-label="previous image" onclick="plus_slide(1)"><i></i></button>
+                    </div>
+                    <p class="work-desc">Disillusion is a 3D puzzle-narrative game about grief, loss and acceptance. It was developed over a year
+                        in collaboration with 6 other students as an undergraduate thesis. It is currently released on Steam. [Trailer credits to Steam page].
+                    </p>
+                </div>
+
+                <div class="work-tools"> 
+                    <h3>Instrumenta e Arte</h3>
+                    <p>Skills: Character modeling & rigging,  game programming, OOP</p>
+                    <p>Tools: Maya, Unreal Engine 5, Clip Studio Paint</p>
+                </div>
+                </article>
+
+                <!-- Derail the Dragon --> 
+                <article class="work">
+                <div class="work-meta">
+                    <h3>TITLE</h3>
+                    <p>AFFILIATION</p>
+                    <p>ROLES</p>
+                    <p>DATES</p>
+                </div>
+
+                <!-- Necropolis -->
+                <div class="work-main">
+                    <div class="slides">
+                        <button type="button" class="arrow left s" aria-label="previous image" onclick="plus_slide(-1)"><i></i></button>
+                        <div class="slidetrack" tabindex="0" aria-label="[title] images">
+                            <figure class="fade"><img src="images/project1-a.png" alt="[describe the image]"></figure>
+                            <figure class="fade"><img src="images/project1-b.jpg" alt="[describe the image]"></figure>
+                        </div>
+                        <button type="button" class="arrow right s" aria-label="previous image" onclick="plus_slide(1)"><i></i></button>
+                    </div>
+                    <p class="work-desc">Project Description</p>
+                </div>
+
+                <div class="work-tools"> 
+                    <h3>Instrumenta e Arte</h3>
+                    <p>SKILLS USED</p>
+                    <p>TOOLS USED</p>
+                </div>
+                </article>
+
+                 <article class="work">
+                <div class="work-meta">
+                    <h3>TITLE</h3>
+                    <p>AFFILIATION</p>
+                    <p>ROLES</p>
+                    <p>DATES</p>
+                </div>
+
+                <div class="work-main">
+                    <div class="slides">
+                        <button type="button" class="arrow left s" aria-label="previous image" onclick="plus_slide(-1)"><i></i></button>
+                        <div class="slidetrack" tabindex="0" aria-label="[title] images">
+                            <figure class="fade"><img src="images/project1-a.png" alt="[describe the image]"></figure>
+                            <figure class="fade"><img src="images/project1-b.jpg" alt="[describe the image]"></figure>
+                        </div>
+                        <button type="button" class="arrow right s" aria-label="previous image" onclick="plus_slide(1)"><i></i></button>
+                    </div>
+                    <p class="work-desc">Project Description</p>
+                </div>
+
+                <div class="work-tools"> 
+                    <h3>Instrumenta e Arte</h3>
+                    <p>SKILLS USED</p>
+                    <p>TOOLS USED</p>
+                </div>
+                </article>
+            </div>
+        </section>
 
         <div class="footer">
             bas-de-page
+            <nav class="topnav foot">
+            <span>
+                <a href="index.html">home</a>
+                <a href="about.html">about</a>
+                <a class="active" href="portfolio.html">portfolio</a>
+                <a href="contact.html">contact</a>
+            </span>
+        </nav>
             <div class="f1">
                 <span id="f"> </span>
                     <a id="post">

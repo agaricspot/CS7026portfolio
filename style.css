@@ -15,7 +15,6 @@ html, body {
 
 h2{
     font-family: 'UnifrakturCook', 'UnifrakturMaguntia', 'Old English Text MT', serif;
-
 }
 
 /*navigation 
@@ -53,6 +52,12 @@ space-between places logo and nav links apart*/
 }
 .topnav a.active:hover{
     color:#182a70;
+}
+.logo{
+    font-family: 'UnifrakturCook', 'UnifrakturMaguntia', 'Old English Text MT', serif;
+    letter-spacing:-3px;
+    text-transform: none;
+  
 }
 
 .bar{ /*repeating linear gradient pattern. housed in a div to use as a dividier*/
@@ -108,10 +113,21 @@ space-between places logo and nav links apart*/
     border-width: 0 3px 3px 0; 
     display: inline-block; 
     padding: 3px;
+    transform-style: preserve-3d;
 }
 .right{
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
+    background: transparent;
+}
+.left{
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    background: transparent;
+}
+.s{
+    color:#a81f0a;
+    scale: 150%;
 }
 
 /*arch display*/
@@ -362,6 +378,16 @@ input:focus, textarea:focus{ outline: 2px solid #1e3a78;}
     white-space: nowrap;
     overflow: hidden;
 }
+.portrait img{
+   display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 999px 999px 0 0;   /* follows the arch's curve */
+    box-sizing: border-box;
+    padding: 20px;
+}
 .textcontent{
     border-left: 1px solid #2b1d12;
     columns: 2 220px;      /* up to 2 columns, each at least 220px wide */
@@ -482,27 +508,29 @@ input:focus, textarea:focus{ outline: 2px solid #1e3a78;}
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
+    gap:12px;
 }
-.sidel{ padding-right: 10em; }
-.sider{ padding-left: 10em; }
+.sidel{ padding-right: 5em; }
+.sider{ padding-left: 5em; flex-direction: row-reverse; }
 
-.edgel, .edger{ width: 140px; height: 190px; margin-left: auto;}
+.edgel, .edger{ width: 160px; height: 190px;}
 .innerl, .innerr{ width: 160px; height: 150px; }
 .edgel{ margin-left: -70px; }          /* half hidden by the header's edge */
-.edger{ margin-right: -70px; }
+.edger{ margin-right: -70px; order:-1;}
+
 
 .ledge{
     grid-column: 1/-1;
     position: relative; 
-    z-index: 3;
-    height: 56px;
+    margin-top: -2px;
+    z-index: 0;
+    height: 82px;
     display: flex;
     justify-content: center;
     align-items: center;
     background: #dccead;
-    border-top: 3px double #b8892b;
 }
-
+/* styling for future development
 .toggle{
     width: 44px;
     height: 44px;
@@ -521,8 +549,117 @@ input:focus, textarea:focus{ outline: 2px solid #1e3a78;}
     margin-top: -4px;
     transform: rotate(45deg);
     transition: transform .3s ease;
+}*/
+/*portfolio projects
+.drawer{
+    display: grid;
+    /*grid-template-rows: 0fr;
+    transition: grid-template-rows .35s ease; 
+}
+/* styling for toggle
+.drawer.open{ grid-template-rows: 1fr;}
+.drawer.inner{overflow: hidden; min-height: 0;}
+
+.toggle[aria-explanded="true"] .arrow.down{
+    transform:rotate(225deg);
+    margin-top:4px; 
+}*/
+
+.foot{ /*styling override for footer navigation*/
+    padding-top: 20px;
+    margin:5px;
+    border-top: 3px double #b8892b;
+    border-bottom: 3px double #b8892b;
 }
 
+.work{
+    display:grid;
+    grid-template-columns:minmax(120px, 1fr) minmax(0, 2.4fr) minmax(120px, 1fr);
+    gap: 28px; 
+    padding: 28px 0 28px 0;
+    margin: 5px 0 5px;
+    border-top: 5px double #b8892b;
+    border-bottom: 5px double #b8892b
+
+}
+.work-meta{
+    text-align: right;
+    border-right: 1px solid #2b1d12;
+    padding-right: 10px;
+}
+.work-tools{
+    text-align: left;
+    border-left: 1px solid #2b1d12;
+    padding-left: 10px;
+}
+.work-tools, .work-meta{
+    font-size: clamp(.7rem, 1.1vw + .25rem, 1rem); /*scaling font with window*/
+    overflow-wrap: anywhere;
+    min-width: 0;
+}
+
+.work-meta p, .work-tools p {margin:0; font-style: italic; font-size: .95em;}
+
+.work h3{
+    margin: 0 0 8px; 
+    font-size: 1.7em;
+    line-height: 1.1;
+    color:#1e3a78
+}
+
+/* slideshow*/
+.slides{
+    display: grid;
+    grid-template-columns: auto minmax(0,1fr) auto;
+    align-items:center; 
+    gap: 10px;   
+}
+
+.slidetrack{
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none; /*hide scrollbar*/
+    aspect-ratio: 1440/900; /*sizing*/
+    padding:5px;
+    border: 5px double #b8892b
+}
+.slidetrack::-webkit-scrollbar{display:none;}
+.slidetrack figure{
+    flex: 0 0 100%;
+    margin: 0; 
+    scroll-snap-align: center; 
+}
+.slidetrack img,.slidetrack iframe{ 
+    display: block;
+    width:100%;
+    height:100%;
+    object-fit:cover; 
+}
+
+iframe{
+    border: none;
+}
+
+.arrow:hover{
+    color: #8e0e0e;
+}
+
+.work-desc{
+    margin: 12px 0 0;
+    padding: 0 38px 10px;
+    line-height: 1.5;
+    font-style: italic;
+}
+
+.fade{
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+@keyframes fade{
+    from {opacity: .4}
+    to {opacity: 1}
+}
 /*media queries*/
 @media (max-width: 1100px){ 
     /*contact*/
@@ -538,19 +675,28 @@ input:focus, textarea:focus{ outline: 2px solid #1e3a78;}
         margin: 0 auto 20px;
         align-self: start;
     }
+    /*portfolio*/
+    .r2,.l2{display: none;} /*remove inner portfolio arches*/
 }
    
-@media (min-width: 1100px){ /*revert when screen widens again*/
+@media (min-width: 1100px){ /*revert when screen widens again on contact page*/
     aside{display: normal;}
     .below{display: none;}
+    
    
 }
-@media (max-width: 700px){
-    .side{ display: none; }
+@media (max-width: 700px){ 
+    .side{ display: none; } /*remove extra landing arches*/
+    /*portfolio page column spacing changes for small screens*/
     .hero{ grid-template-columns: minmax(0, 1fr); }
     .hero-center{ grid-column: 1; }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1000px) { /*remove second set of arches on portfolio header*/
   .innerl, .innerr { display: none; }
+}
+
+@media (max-width: 900px){
+    .work{ grid-template-columns: minmax(0, 1fr); gap: 16px; }
+    .work-meta, .work-tools{ text-align: left; border: 0; padding: 0; }
 }

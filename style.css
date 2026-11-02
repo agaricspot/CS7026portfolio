@@ -1,9 +1,11 @@
+/*GENERAL*/
+
+/*set html & body to default font and page color*/
 html, body {
   font-family: "IM Fell English", "Georgia", serif;
   background-color: #f0e4c8;
   margin:0;
 }
-
 /*surrounds page content with  a border*/
 .pg{
    border: 10px double #b8892b;
@@ -12,21 +14,18 @@ html, body {
    display: flex;
    flex-direction: column;
 }
-
+/*set default h2 font*/
 h2{
     font-family: 'UnifrakturCook', 'UnifrakturMaguntia', 'Old English Text MT', serif;
 }
-
+/*set default h1 font & styling*/
 h1{
     font-family: 'UnifrakturCook', 'UnifrakturMaguntia', 'Old English Text MT', serif;
     font-size: 3em;
     color: #1e3a78;
     text-align: center;
 }
-
-
-/*navigation 
-space-between places logo and nav links apart*/
+/*nav bar. space between sets elements apart from one another */
 .topnav{
     display: flex;
     flex-wrap: wrap;
@@ -40,16 +39,19 @@ space-between places logo and nav links apart*/
     text-transform: uppercase;
    
 }
+/*span element in topnav. groups navigation buttons away from logo*/
 .topnav span{ 
     display:flex;
     flex-wrap:wrap; 
     gap: 28px;
 }
+/*style links to remove underline and set color*/
 .topnav a {
-    color:#a82d1a; /*set color to vermillion*/
+    color:#a82d1a; 
     text-decoration: none;
 }
-.topnav a.active{ /*set active color to lapis & add vermillion underline*/
+/*current page is colored blue & underlined*/
+.topnav a.active{ 
     color: #1e3a78;
     text-decoration: underline;
     text-underline-offset: .25em;
@@ -62,6 +64,9 @@ space-between places logo and nav links apart*/
 .topnav a.active:hover{
     color:#182a70;
 }
+
+/*styled to be blackletter initials with reduced letter spacing. will be changed to
+a monogram for future development*/
 .logo{
     font-family: 'UnifrakturCook', 'UnifrakturMaguntia', 'Old English Text MT', serif;
     letter-spacing:-2px;
@@ -71,7 +76,15 @@ space-between places logo and nav links apart*/
     margin:0; 
 }
 
-.bar{ /*repeating linear gradient pattern. housed in a div to use as a dividier*/
+.foot{ /*styling override for footer navigation*/
+    padding-top: 20px;
+    margin:5px;
+    border-top: 3px double #b8892b;
+    border-bottom: 3px double #b8892b;
+}
+
+/*repeating linear gradient pattern. housed in a div to use as a dividier*/
+.bar{ 
     height: 12px;
     background: repeating-linear-gradient(90deg, 
          #1e3a78,
@@ -85,6 +98,7 @@ space-between places logo and nav links apart*/
 }
 
 /*footer*/
+/* set footer text to uppercase and create border.*/
 .footer {
   margin-top: auto;
   padding-top: 10px;
@@ -93,6 +107,7 @@ space-between places logo and nav links apart*/
   color: #a81f0a;
   border-top: 8px double #b8892b;
 }
+/*container that aligns see post button aand post content like the navigation buttons*/
 .f1{
     display: flex;
     flex-wrap: wrap;
@@ -102,6 +117,7 @@ space-between places logo and nav links apart*/
     padding-top: 5px;
     letter-spacing: .14em; /* more spacing*/
 }
+/*content fetched from tumblr. styled to be smaller. remove underline from anchor.*/
 #f{
     font-style: italic;
     display: flex;
@@ -111,24 +127,27 @@ space-between places logo and nav links apart*/
     letter-spacing:.08em;
     text-transform: none !important;
 }
+/*link styling for link to post*/
 #post{
     color: inherit;
     text-decoration: none;
 }
-#post:hover{
+#post:hover{/*darken for responsiveness*/
     color: #8e0e0e;
 }
+
+/*arrow button creation. border of square div with just bottom and right visible*/
 .arrow{
     color:inherit;
-    border: solid currentColor; 
+    border: solid currentColor; /*change with parent's color */ 
     border-width: 0 3px 3px 0; 
     display: inline-block; 
     padding: 3px;
-    transform-style: preserve-3d;
+    transform-style: preserve-3d; /* known bug where rotating a shape can cause the faces to behave strangely. solves this issue*/
 }
 .right{
     transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg); /* i am aware webkits cause warnings, but iirc they make the side more backwards compatible*/
     background: transparent;
 }
 .left{
@@ -137,11 +156,29 @@ space-between places logo and nav links apart*/
     background: transparent;
 }
 .s{
-    color:#a81f0a;
+    color:#a81f0a; /*slideshow buttons. wanted them larger*/
     scale: 150%;
 }
+.arrow:hover{
+    color: #8e0e0e;
+}
 
-/*arch display*/
+
+/*rounded arch div.*/
+.arch{
+    position: relative;
+    z-index: 1; /*sets in front of other divs*/
+    background: #1e3a78; 
+    border: double 8px #b8892b;
+    border-radius: 999px 999px 0 0; /*round top*/
+    text-align: center;
+    box-sizing: border-box;
+}
+
+
+/*LANDING*/
+
+/*arch display, flex container of arch frames*/
 .wall {
     position: relative;
     display: flex;
@@ -149,85 +186,75 @@ space-between places logo and nav links apart*/
     align-items: center;
     gap: 12%;
     padding: 24px 0;
-    --h: max(480px, calc(100vh - 290px));  
+    --h: max(480px, calc(100vh - 290px));  /*sets a minimum size for the arch*/
     flex: 1;
 }
-.arch{
-    position: relative;
-    z-index: 1; /*sets in front of floor divs*/
-    background: #1e3a78; 
-    border: double 8px #b8892b;
-    border-radius: 999px 999px 0 0; /*round top*/
-    text-align: center;
-    box-sizing: border-box;
-}
+/*styling for the center arch*/
 .center{
-    height: var(--h);
+    height: var(--h); /*height set to wall miniumum*/
     width: auto;             
     aspect-ratio: .63;
-    flex: none;
-    color: #f3c569;
-    justify-content: sa;
+    flex: none; /*dont grow or shrink*/
+    color: #f3c569; /*text color*/ 
+    justify-content: center;
     align-items: center;
 }
+/*small arch styling*/
 .side{
-    height: calc(var(--h) * .72);
+    height: calc(var(--h) * .72); /*72% of --h var*/
     width: auto;
     aspect-ratio: .42;
-    flex: none;
+    flex: none; /*no shrink or grow*/ 
     display:inline;
 }
-
-
+/*floor div*/
 .floor{
-    background: #dccead;
+    background: #dccead; /*darken to give 3D effect*/
     position:absolute; 
     left:0; right: 0; 
     height:61px;
-    bottom:0px;
+    bottom:0px; /*stick to bottom of page*/
 }
 
-/*content*/
+/*content. set color */
 .info{
     position:absolute;
     color:#f3c569;
     bottom:0px;
     left:0;
-    margin-bottom:  60px;
+    margin-bottom: 60px;
 }
-.center h1{
-    font-family: 'UnifrakturCook', 'UnifrakturMaguntia', 'Old English Text MT', serif;
-    font-size: 3em;
+.center h1{ /*set coloring  of text*/
     margin: 0;
     margin-bottom: 30px;
-    color: #f3c569;
+    color:inherit;
 }   
 .button{
     border: solid 2px #f3c569;
-    color:#f3c569;
-    padding: 10px;
-    text-decoration: none !important;
+    color: inherit; 
+    padding: 10px;/*space within button*/
+    text-decoration: none !important; /*remove link coloring and underline*/
     text-transform: uppercase;
     font-size: .8em;
 }
+/*small about text*/
 .blurb{
-    text-align: justify;
+    text-align: justify; /*keep sides flat to fit in arch nicely*/
     padding:15px;
     padding-top: 0;
     margin-top: -20px;
 }
-
+/*wheel svg*/
 .arch svg {
     margin:0;
-    fill: none;
+    fill: none; /*just lines*/
     stroke-width: 3px;
-    stroke: #f3c569;
+    stroke: #f3c569; /*set stroke color*/
     padding-bottom: 20px;
 }
 
 
-
-/*contact page*/
+/*CONTACT PAGE*/
 .contact{
     display: flex;
     gap: 3%;
@@ -245,7 +272,6 @@ space-between places logo and nav links apart*/
     text-align: right !important;
     border-right: solid #2b1d12 1px;
     padding-right: 20px;
-
 }
 .r{
     text-align: left !important;
@@ -255,8 +281,8 @@ space-between places logo and nav links apart*/
 
 .contact p, .below p{
     font-style: italic;
-    padding:0 auto; 
-    margin: 0 auto; 
+    padding:0; 
+    margin: 0; 
 }
 
 aside{
@@ -267,51 +293,54 @@ aside{
     color:#a81f0a; 
     font-style:normal !important;
 }
-
+/*hidden div to display on smaller screens.*/
 .below{
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /*stack vertical*/
     gap: 3%;
     text-align: center;
-    max-width: 35%;
+    max-width: 35%; /*dont take up more than 35% of screen*/
     
 }
-
+/*styling for for divs in below*/
 .below div{
     display: flex;
-    flex-direction: column;
+    flex-direction: column;/*stack vertical*/
     align-items: center;
     justify-content: center;
     padding: 10px;
 }
-
+/*link styling*/
 .contact a{
     text-decoration: none;
     color: #1e3a78;
 }
-.contact a:hover{
+.contact a:hover{/*darken for responsiveness*/
     color: #182a70;
 }
-
+/*contact form*/
 .letter{
-    flex: 3 1 480px;
+    flex: 3 1 480px; /*takes up more of screen with min 480px*/
     max-width: 640px; 
 }
-.letter p{
+.letter p{ /*repmve italic styling*/
     font-style: normal;
 }
+/*letter head*/
 .greeting{
     font-family: 'UnifrakturCook', 'UnifrakturMaguntia', 'Old English Text MT', serif;
     color:#a81f0a;
     font-size: 2em;
     margin: 0 0 18px; 
 }
+/*subheading*/
 .intro{
     margin: 0 0 12px; 
     padding-bottom: 6px;
     font-size: 1.2em;
-    border-bottom: 1px solid #d9c79c;
+    border-bottom: 1px solid #d9c79c; /*thin divider*/
 }
+/*label styling. caps, color, size, and spacing*/
 label{
     display: block;
     margin-top: 18px; 
@@ -320,6 +349,7 @@ label{
     text-transform: uppercase;
     color:#a81f0a;
 }
+/*styles input & textarea fields*/
 input, textarea{
     display: block;
     width: 100%; 
@@ -327,20 +357,30 @@ input, textarea{
     font: inherit; 
     font-size: 1em;
     color: #2b1d12;
-    background: transparent; 
+    background: transparent; /*just see page color*/
     border: 0; 
     border-bottom: 1px solid #2b1d12; 
     padding: 6px; 
 }
+/*override to give textarea a full surrounded box*/
 textarea{
     border: 1px solid #2b1d12; 
     padding: 10px; 
     margin-top: 4px;
-    resize: vertical;
+    resize: vertical;/*only get taller*/
 }
+/*when clicked in, blue border*/
 input:focus, textarea:focus{ outline: 2px solid #1e3a78;}
 
-.send{display: flex; align-items: center; gap: 18px; margin-top: 26px;}
+/*container to hold stamp and note*/
+.send{
+    display: flex; 
+    align-items: 
+    center; gap: 18px; 
+    margin-top: 26px;
+}
+
+/*wax seal styled button*/
 .seal{
     width:96px;
     height:96px;
@@ -350,16 +390,21 @@ input:focus, textarea:focus{ outline: 2px solid #1e3a78;}
     font-family: 'UnifrakturCook', 'UnifrakturMaguntia', 'Old English Text MT', serif;
     font-size: 1.5em;
     color:#f3c569;
-    cursor: pointer;
+    cursor: pointer; /*shows it is clickable*/
 }
+/*darken on hover for responsiveness*/
 .seal:hover{background: #8e0e0e;}
+
+/*shrink note and make italic*/
 .note{
     font-style: italic;
     font-size: .9em;
     color:#2b1d12
 }
 
-/*about page*/
+/*ABOUT*/
+
+/*container grid with 3 columns & 2 rows*/
 .about{
     display: grid;
     grid-template-columns: 350px minmax(0, 1fr);  /* fixed | everything else */
@@ -370,22 +415,17 @@ input:focus, textarea:focus{ outline: 2px solid #1e3a78;}
     justify-content: center;
     padding: 28px 28px 28px 0;
 }
+/*arch shape container for photo*/
 .portrait{
-    grid-row: 1 / 3;
+    grid-row: 1 / 3; /*take up 2 rows*/
     width: 100%;          
     aspect-ratio: .78;
     margin: 0;             
     padding: 0;
     box-sizing: border-box;
     align-self: start;
-    /*Source - https://stackoverflow.com/a/60499251
-    Posted by Theraot
-    Retrieved 2026-10-29, License - CC BY-SA 4.0*/
-    text-indent: 100%;
-    white-space: nowrap;
-    overflow: hidden;
 }
-.portrait img{
+.portrait img{ /*photo within arch*/
    display: block;
     width: 100%;
     height: 100%;
@@ -393,8 +433,9 @@ input:focus, textarea:focus{ outline: 2px solid #1e3a78;}
     object-position: center;
     border-radius: 999px 999px 0 0;   /* follows the arch's curve */
     box-sizing: border-box;
-    padding: 20px;
+    padding: 20px; /*show the blue background as a border*/
 }
+/*about me paragraphs in 2 column display*/
 .textcontent{
     border-left: 1px solid #2b1d12;
     columns: 2 220px;      /* up to 2 columns, each at least 220px wide */
@@ -405,18 +446,19 @@ input:focus, textarea:focus{ outline: 2px solid #1e3a78;}
 }
 .textcontent p{ /*fix random hanging line from first column*/
     break-inside: avoid;
-    margin:0 0 1em;
-    
+    margin:0 0 1em;  
 }
+/*large block letter*/
 .initial{
     --size: clamp(56px, 12vw, 114px); /*set min preferred and max sizes for initial*/
 
     float: left; 
-    width: var(--size);
+    width: var(--size);/*keep roughly square*/
     max-width: var(--size);
-    flex:none;
+    flex:none; /*dont grow or shrink (kept it from staying square)*/
     overflow: hidden;
 
+    /*letter*/
     display: flex;
     align-items: center;
     justify-content: center;
@@ -434,23 +476,21 @@ input:focus, textarea:focus{ outline: 2px solid #1e3a78;}
     width: 1px;
     height: 1px;
     overflow: hidden;
-    clip: rect(0 0 0 0);
     white-space: nowrap;
 }
-
+/*short cv section boxes*/
 .cv{
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);  /* always a 1 : 1.5 split */
     gap: 20px;
-    align-items: stretch;
+    align-items: stretch; /*keep box heights even*/
     padding-left: 15px;
     border-left: 1px solid #2b1d12;
     align-self: end;
 }
-
+/*text styling for cv*/
 .ed, .proj{
-    min-width: 0;         
-    flex: none;            
+    min-width: 0; /*shrink with boxes*/     
     box-sizing: border-box;
     padding: 10px;
     padding-top: 0px;
@@ -460,45 +500,49 @@ input:focus, textarea:focus{ outline: 2px solid #1e3a78;}
     justify-content: flex-start;
 }
 
-/*portfolio*/
+
+/*PORTFOLIO*/
+
+/*top section with name and links*/
 .hero{
     overflow: hidden;
     padding-top: 28px;
     display: grid;
-    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); /*three columns*/ 
     align-items: end;
 }
 
+/*name & blurb*/
 .main{
     position: relative;
-    z-index: 2;
+    z-index: 2; /*keep at top*/
     display: flex;
     justify-content: center;
     align-items: flex-end;
     gap: 16px;
     flex-wrap: wrap;
 }
-.hero .text h1{
+.hero .text h1{ /*keep lines closer*/
     margin:0; 
     line-height: 1;
 }
-
+/*occupation*/
 .role{
     margin: 6px 0 0;
     font-style: italic;
 }
-
+/*styling for list of links*/
 .links{
     position: relative;
     z-index: 2;
-    display: flex;
+    display: flex; /*make horizontal*/
     justify-content: center;
     align-items: center;
     gap: 24px;
-    list-style: none;
+    list-style: none;/*remove bullets*/
     padding: 2px; 
 }
-.links img{
+.links img{/*set images used as links to be 20px squares*/
     width: 20px; 
     height: 20px;
 }
@@ -506,35 +550,38 @@ input:focus, textarea:focus{ outline: 2px solid #1e3a78;}
     transform: translateY(-2px)!important;
 }
 
-.heroarch{
-    position: relative;
-    flex: none;
-    grid-column: 2;
-}
+/*container for side arches*/
 .heroside{
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
     gap:12px;
 }
-.sidel{ padding-right: 5em; }
-.sider{ padding-left: 5em; flex-direction: row-reverse; }
-
+.heroarch{
+    position: relative;
+    flex: none;
+    grid-column: 2; /*set location*/
+}
+/*set padding for heroside based on whether its right or left*/
+.sidel{ padding-right: 2.5em; }
+.sider{ padding-left: 2.5em; flex-direction: row-reverse; }/*reverse flex direction so tall arch sits to right*/
+/*set taller height for half edge arch*/
 .edgel, .edger{ width: 160px; height: 190px;}
-.innerl, .innerr{ width: 160px; height: 150px; }
 .edgel{ margin-left: -70px; }          /* half hidden by the header's edge */
 .edger{ margin-right: -70px; order:-1;}
+.innerl, .innerr{ width: 140px; height: 150px; } /*set shorter height of inner arches
 
 
+/*similar to floor, commented out stylings for future development.*/
 .ledge{
     grid-column: 1/-1;
     position: relative; 
     margin-top: -2px;
     z-index: 0;
     height: 82px;
-    display: flex;
+    /*display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center;*/
     background: #dccead;
 }
 /* styling for future development
@@ -572,27 +619,23 @@ input:focus, textarea:focus{ outline: 2px solid #1e3a78;}
     margin-top:4px; 
 }*/
 
-.foot{ /*styling override for footer navigation*/
-    padding-top: 20px;
-    margin:5px;
-    border-top: 3px double #b8892b;
-    border-bottom: 3px double #b8892b;
-}
-
+/*3 col grid container for slideshow and information*/
 .work{
     display:grid;
-    grid-template-columns:minmax(120px, 1fr) minmax(0, 2.4fr) minmax(120px, 1fr);
+    grid-template-columns:minmax(120px, 1fr) minmax(0, 2.4fr) minmax(120px, 1fr); /*slideshow col widest, sets min and max sizes*/
     gap: 28px; 
     padding: 28px 0 28px 0;
     margin: 5px 0 5px;
     border-top: 5px double #b8892b;
 
 }
+/*meta information about project*/
 .work-meta{
     text-align: right;
     border-right: 1px solid #2b1d12;
     padding-right: 10px;
 }
+/*tools and skills used on project*/
 .work-tools{
     text-align: left;
     border-left: 1px solid #2b1d12;
@@ -600,12 +643,13 @@ input:focus, textarea:focus{ outline: 2px solid #1e3a78;}
 }
 .work-tools, .work-meta{
     font-size: clamp(.7rem, 1.1vw + .25rem, 1rem); /*scaling font with window*/
-    overflow-wrap: anywhere;
+    overflow-wrap: anywhere; /*avoid long word keeping a col wide*/
     min-width: 0;
 }
-
+/*make inner text smaller & italic*/
 .work-meta p, .work-tools p {margin:0; font-style: italic; font-size: .95em;}
 
+/*set h3 for work class divs*/ 
 .work h3{
     margin: 0 0 8px; 
     font-size: 1.7em;
@@ -616,11 +660,11 @@ input:focus, textarea:focus{ outline: 2px solid #1e3a78;}
 /* slideshow*/
 .slides{
     display: grid;
-    grid-template-columns: auto minmax(0,1fr) auto;
+    grid-template-columns: auto minmax(0,1fr) auto; /*three cols to accomodate buttons*/
     align-items:center; 
     gap: 10px;   
 }
-
+/*images*/
 .slidetrack{
     display: flex;
     overflow-x: auto;
@@ -630,7 +674,8 @@ input:focus, textarea:focus{ outline: 2px solid #1e3a78;}
     padding:5px;
     border: 5px double #b8892b
 }
-.slidetrack::-webkit-scrollbar{display:none;}
+.slidetrack::-webkit-scrollbar{display:none;}/*for older browsers*/
+/*images within slideshow*/
 .slidetrack figure{
     flex: 0 0 100%;
     margin: 0; 
@@ -640,24 +685,20 @@ input:focus, textarea:focus{ outline: 2px solid #1e3a78;}
     display: block;
     width:100%;
     height:100%;
-    object-fit:cover; 
+    object-fit:cover; /*fill area by width*/
 }
-
+/*remove iframe border*/
 iframe{
     border: none;
 }
-
-.arrow:hover{
-    color: #8e0e0e;
-}
-
+/*set project descripton to italic*/
 .work-desc{
     margin: 12px 0 0;
-    padding: 0 38px 10px;
+    padding: 0 38px 10px; /*keep inline with image*/
     line-height: 1.5;
     font-style: italic;
 }
-
+/*animation class for changing slides*/
 .fade{
     animation-name: fade;
     animation-duration: 1.5s;
@@ -666,7 +707,9 @@ iframe{
     from {opacity: .4}
     to {opacity: 1}
 }
-/*media queries*/
+
+
+/*MEDIA QUERIES*/
 @media (max-width: 1100px){ 
     /*contact*/
     aside{display: none;}/*display a different div with same information that works better on small screens*/
@@ -686,7 +729,7 @@ iframe{
 }
    
 @media (min-width: 1100px){ /*revert when screen widens again on contact page*/
-    aside{display: normal;}
+    aside{display:initial}
     .below{display: none;}
     
    
